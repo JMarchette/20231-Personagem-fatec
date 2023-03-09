@@ -1,4 +1,4 @@
-import java.net.Socket;
+import static java.lang.Math.min;
 
 public class Personagem
 {
@@ -6,26 +6,55 @@ public class Personagem
     // ?? vermelho = untracked
     //variáveis de instância
     String nome;
-    int energia;
-    int fome;
-    int sono;
+    int energia = 10;
+    int fome = 0;
+    int sono = 0;
 
     // método de instância caçar
     void cacar()
     {
-        System.out.println(nome + " cacando");
+        if (energia >= 2)
+        {
+            System.out.println(nome + " cacando");
+            energia = energia -2;
+        }
+        else 
+        {
+            System.out.println(nome + " sem energia para cacar");
+        }
+        fome = min(fome + 1, 10);
+        sono = min(sono + 1, 10);
+        
     }
 
     // método de instância comer
     void comer()
     {
-        System.out.printf(nome + " comendo\n");
+        if (fome >= 1)
+        {
+            System.out.printf(nome + " comendo\n");
+            energia = min (energia + 1, 10);
+            fome = fome - 1;
+        }
+        else
+        {
+            System.out.println(nome + " sem fome");
+        }
     }
 
     // método de instância dormir
     void dormir()
     {
-        System.out.printf("%s dormindo%n", nome);
+        if (sono >= 1)
+        {
+            System.out.printf("%s dormindo%n", nome);
+            energia = energia + 1 < 10 ? energia + 1 : 10; // senao = :
+            sono--;
+        }
+        else 
+        {
+            System.out.println(nome + " sem sono");
+        }
     }
 
 

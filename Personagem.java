@@ -2,22 +2,24 @@ import java.net.Socket;
 
 public class Personagem
 {
+    // A verde= adicionado/pronto para commit
+    // ?? vermelho = untracked
     //variáveis de instância
     String nome;
+    int energia;
     int fome;
     int sono;
-    int energia;
 
     // método de instância caçar
     void cacar()
     {
-        System.out.println(nome + " caçando");
+        System.out.println(nome + " cacando");
     }
 
     // método de instância comer
     void comer()
     {
-        System.out.print(fome + " comendo\n");
+        System.out.printf(nome + " comendo\n");
     }
 
     // método de instância dormir
@@ -26,5 +28,5 @@ public class Personagem
         System.out.printf("%s dormindo%n", nome);
     }
 
-    
+
 }

@@ -6,9 +6,11 @@ public class TestePersonagem
        //Personagem p = new Personagem();
        //java 10 em diante (ineferência de tipo)
         var p = new Personagem();
+        System.out.println(p.energia);
         p.nome = "john";
         p.cacar();
-        
+        p.comer();
+        p.dormir();
 
     }
 }

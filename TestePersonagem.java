@@ -1,6 +1,6 @@
 public class TestePersonagem 
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
 
         // p é uma variável de referência. Faz referência ao objeto construído com new
@@ -9,12 +9,15 @@ public class TestePersonagem
         var p = new Personagem();
         System.out.println(p.energia);
         p.nome = "john";
-        // 10, 0, 0, john
-        p.cacar();
-        p.comer();
-        p.dormir();
-
-    }
+        while (true)    
+        {
+            p.cacar();
+            p.comer();
+            p.dormir();
+            p.cacar();
+            p.cacar();
+            p.cacar();
+        }
     /*
         int idade = 18;
 
@@ -26,4 +29,5 @@ public class TestePersonagem
         {
             System.out.println("Não pode dirigir");
         } */
+    }
 }
